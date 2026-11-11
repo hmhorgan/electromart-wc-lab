@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ElectroMart CCC</title>
+  <meta name="description" content="Cash conversion cycle and working capital levers for the ElectroMart case.">
+  <meta name="theme-color" content="#b3122b">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="ElectroMart">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>ElectroMart CCC</h1>
+    <p class="sub">Cash conversion cycle, before and after the working capital changes</p>
+  </header>
+
+  <main>
+    <p id="status" class="status">Loading data…</p>
+
+    <section id="cycle-section" hidden>
+      <h2>How long a dollar is tied up</h2>
+      <div class="table-wrap">
+        <table id="cycle-table">
+          <thead>
+            <tr><th>Measure</th><th>Before</th><th>After</th><th>Change</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="note" id="cycle-note"></p>
+    </section>
+
+    <section id="freed-section" hidden>
+      <h2>Cash freed by each lever</h2>
+      <div class="table-wrap">
+        <table id="freed-table">
+          <thead>
+            <tr><th>Lever</th><th>Before</th><th>After</th><th>Cash freed</th></tr>
+          </thead>
+          <tbody></tbody>
+          <tfoot></tfoot>
+        </table>
+      </div>
+      <p class="note">A drop in an asset frees cash. A rise in accounts payable frees cash.
+        Each figure also equals days changed × annual COGS (or revenue) / <span class="diy"></span>.</p>
+      <ul id="freed-check" class="check"></ul>
+    </section>
+
+    <section id="lever-section" hidden>
+      <h2>Try the levers</h2>
+      <p class="note top">Move a slider to change the days. Revenue and COGS stay at their Before values.</p>
+
+      <div class="slider">
+        <label for="dio">DIO <span class="hint">inventory days</span></label>
+        <output id="dio-out" for="dio"></output>
+        <input type="range" id="dio" step="any" min="0">
+      </div>
+      <div class="slider">
+        <label for="dso">DSO <span class="hint">collection days</span></label>
+        <output id="dso-out" for="dso"></output>
+        <input type="range" id="dso" step="any" min="0">
+      </div>
+      <div class="slider">
+        <label for="dpo">DPO <span class="hint">payment days</span></label>
+        <output id="dpo-out" for="dpo"></output>
+        <input type="range" id="dpo" step="any" min="0">
+      </div>
+
+      <div class="buttons">
+        <button type="button" id="set-before">Set to Before</button>
+        <button type="button" id="set-after">Set to After</button>
+      </div>
+
+      <h3>Cash conversion cycle</h3>
+      <div class="table-wrap">
+        <table id="lever-ccc">
+          <thead><tr><th></th><th>Before</th><th>Sliders</th><th>Change</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <h3>Balances the days imply</h3>
+      <div class="table-wrap">
+        <table id="lever-bal">
+          <thead><tr><th>Line</th><th>Before</th><th>Sliders</th><th>Cash freed</th></tr></thead>
+          <tbody></tbody>
+          <tfoot></tfoot>
+        </table>
+      </div>
+
+      <h3>Bank line and suppliers</h3>
+      <div class="table-wrap">
+        <table id="lever-bank">
+          <thead><tr><th></th><th>Before</th><th>Sliders</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="note" id="lever-note"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>FIN 4150 · All numbers come from <code>data/electromart.csv</code> and <code>data/assumptions.csv</code>.</p>
+  </footer>
+
+  <script src="ccc.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
