@@ -43,6 +43,58 @@
         Each figure also equals days changed × annual COGS (or revenue) / <span class="diy"></span>.</p>
       <ul id="freed-check" class="check"></ul>
     </section>
+
+    <section id="lever-section" hidden>
+      <h2>Try the levers</h2>
+      <p class="note top">Move a slider to change the days. Revenue and COGS stay at their Before values.</p>
+
+      <div class="slider">
+        <label for="dio">DIO <span class="hint">inventory days</span></label>
+        <output id="dio-out" for="dio"></output>
+        <input type="range" id="dio" step="any" min="0">
+      </div>
+      <div class="slider">
+        <label for="dso">DSO <span class="hint">collection days</span></label>
+        <output id="dso-out" for="dso"></output>
+        <input type="range" id="dso" step="any" min="0">
+      </div>
+      <div class="slider">
+        <label for="dpo">DPO <span class="hint">payment days</span></label>
+        <output id="dpo-out" for="dpo"></output>
+        <input type="range" id="dpo" step="any" min="0">
+      </div>
+
+      <div class="buttons">
+        <button type="button" id="set-before">Set to Before</button>
+        <button type="button" id="set-after">Set to After</button>
+      </div>
+
+      <h3>Cash conversion cycle</h3>
+      <div class="table-wrap">
+        <table id="lever-ccc">
+          <thead><tr><th></th><th>Before</th><th>Sliders</th><th>Change</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <h3>Balances the days imply</h3>
+      <div class="table-wrap">
+        <table id="lever-bal">
+          <thead><tr><th>Line</th><th>Before</th><th>Sliders</th><th>Cash freed</th></tr></thead>
+          <tbody></tbody>
+          <tfoot></tfoot>
+        </table>
+      </div>
+
+      <h3>Bank line and suppliers</h3>
+      <div class="table-wrap">
+        <table id="lever-bank">
+          <thead><tr><th></th><th>Before</th><th>Sliders</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="note" id="lever-note"></p>
+    </section>
   </main>
 
   <footer>

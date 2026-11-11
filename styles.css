@@ -69,6 +69,35 @@ td .full { display: block; font-size: 0.8rem; color: var(--muted); font-weight: 
 .status { color: var(--muted); }
 .status.error { color: var(--bad); }
 
+h3 { font-size: 1rem; margin: 18px 0 6px; }
+.note.top { margin: 0 0 12px; }
+
+.slider {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  gap: 2px 8px;
+  margin-bottom: 12px;
+}
+.slider label { font-weight: 600; }
+.slider .hint { font-weight: 400; color: var(--muted); font-size: 0.85rem; }
+.slider output { font-variant-numeric: tabular-nums; font-weight: 700; }
+.slider input { grid-column: 1 / -1; width: 100%; margin: 4px 0 0; accent-color: var(--accent); }
+
+.buttons { display: flex; gap: 10px; margin: 4px 0 4px; }
+.buttons button {
+  flex: 1;
+  padding: 10px 8px;
+  font: inherit;
+  font-weight: 600;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  background: var(--card);
+  color: var(--accent);
+  cursor: pointer;
+}
+.buttons button:active { background: var(--accent); color: #fff; }
+
 footer { color: var(--muted); font-size: 0.8rem; padding-bottom: 24px; }
 code { overflow-wrap: anywhere; }
 
