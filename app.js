@@ -206,4 +206,11 @@
   }
 
   main();
+
+  // Register the service worker so the app installs and works offline.
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js').catch(() => { /* app still works without it */ });
+    });
+  }
 })();
